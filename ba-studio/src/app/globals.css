@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070a13;
+  --foreground: #f1f5f9;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Background Atmosphere Glows */
+.vibe-bg-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 12% 18%, rgba(0, 240, 255, 0.09) 0%, transparent 35%),
+    radial-gradient(circle at 92% 75%, rgba(249, 115, 22, 0.14) 0%, transparent 40%),
+    radial-gradient(circle at 50% 40%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    #070a13;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(14, 20, 36, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.12), 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Neon Glow Accents */
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.neon-glow-orange {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.45);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.neon-border-cyan {
+  border-color: rgba(0, 240, 255, 0.5) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 15, 28, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.4);
+}
